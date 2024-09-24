@@ -3,48 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mbaefo University</title>
+    <title>Estcon Trading Plan</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
-            flex-direction: column;
         }
-        h1 {
-            color: #00004d;
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        a {
-            text-decoration: none;
-        }
-        .apply-btn {
+
+        header {
             background-color: #00004d;
             color: white;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        footer {
+            background-color: #00004d;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .bordered {
+            border: 2px solid #00004d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group span {
+            position: absolute;
+            left: 10px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #00004d;
+            color: white;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            text-align: center;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 20px;
         }
-        .apply-btn:hover {
+
+        button:hover {
             background-color: #333399;
+        }
+
+        #plan {
+            margin-top: 20px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
 
-    <h1>You are Welcome to Mbaefo University</h1>
+<header>
+    <h1>Estcon Trading Plan by Sir Christopher Obinna</h1>
+</header>
 
-    <a href="https://wa.me/2348063321705" target="_blank">
-        <button class="apply-btn">Apply Now</button>
-    </a>
+<div class="container">
+    <div class="bordered">
+        <p class="bold">I am a Professional Estcon trader who earns Daily Income through Estcon trading.</p>
+    </div>
+
+    <div class="bordered">
+        <p class="bold">You can EASILY Grow your Money through Estcon trading. USE the form below to generate a trading plan for yourself.</p>
+    </div>
+
+    <div class="bordered">
+        <form id="tradingPlanForm">
+            <label for="amount">How much can you afford to start Estcon trading business?</label>
+            <div class="input-group">
+                <span>₦</span>
+                <input type="number" id="amount" placeholder="Enter amount" min="1">
+            </div>
+            <button type="button" onclick="generateTradingPlan()">Generate my trading plan</button>
+        </form>
+    </div>
+
+    <div id="plan"></div>
+</div>
+
+<footer>
+    Grow your Money Fast through ESTCON trading
+</footer>
+
+<script>
+    function generateTradingPlan() {
+        const amountInput = document.getElementById("amount").value;
+        const planDiv = document.getElementById("plan");
+
+        if (!amountInput) {
+            alert("Enter the amount you want to start Estcon trading business");
+            return;
+        }
+
+        const amount = parseFloat(amountInput);
+        const profit = (amount * 0.15).toFixed(2);
+        const hours = Math.floor(Math.random() * 4) + 2; // Random hours between 2 to 5
+
+        planDiv.innerHTML = `
+            <p>This is a Standard Estcon Trading Plan for You.</p>
+            <p>You are to engage in Estcon trading at least <strong>${hours} hours</strong> every day.</p>
+            <p>With the money you have entered as what you can afford to start Estcon trading, your profit every month is <strong>₦${profit}</strong>.</p>
+            <p>To get started with Estcon trading, follow the instructions of the person that have sent the link to this trading plan.</p>
+        `;
+    }
+</script>
 
 </body>
 </html>
