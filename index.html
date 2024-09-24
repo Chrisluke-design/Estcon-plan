@@ -150,12 +150,12 @@
         const amount = parseFloat(amountInput);
         const profitPercentage = Math.floor(Math.random() * 11) + 5; // Random percentage between 45% and 55%
         const profit = (amount * (profitPercentage / 100)).toFixed(2);
-        const hours = Math.floor(Math.random() * 4) + 2; // Random hours between 2 to 5
+        const hours = Math.floor(Math.random() * 3) + 1; // Random hours between 2 to 5
 
         planDiv.style.display = 'block'; // Show the plan div
         planDiv.innerHTML = `
             <p><b>This is a Standard Estcon Trading Plan for You.</b></p>
-            <p>You are to engage in Estcon trading at least <strong>${hours} hours</strong> every day.</p>
+            <p>You are to engage in Estcon trading at least <strong>${hours} hours</strong> every day. The more hours you dedicate to trading, the higher the chances of getting more profits.</p>
             <p>With the money you have entered as what you can afford to start Estcon trading, your POTENTIAL PROFIT every day is <strong>₦${profit}</strong> </p>
             <p>To get started with Estcon trading, follow the instructions of the person WHO have sent you the link to this Estcon trading plan. <br> <b> Get Real Freedom ✊</b></p>
         `;
